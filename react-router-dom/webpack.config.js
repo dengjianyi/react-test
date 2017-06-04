@@ -1,0 +1,23 @@
+module.exports={
+  entry:'./index.js',
+  output:{
+    path:__dirname,
+    filename:'./build/route.js'
+  },
+  devtool:'source-map',
+  module:{
+    loaders:[
+      {
+        test:/\.css$/,
+        exclude:/node_nodules/,
+        loader:'style!css'
+      },
+      {
+        test:/\.js$/,
+        exclude:/node_nodules/,
+        loader:'react-hot-loader!babel-loader'
+
+      }
+    ]
+    }
+};
