@@ -26,9 +26,7 @@ window.onload=function(){
   ReactDOM.render(
     <Router>
       <div>
-        <div>88888888888</div>
         <Route path="/" component={App}></Route>
-        <div>77777777777</div>
         <Route path="/index" component={List} ></Route>
         <Route path="/users" component={MenuDemo}></Route>
       </div>
