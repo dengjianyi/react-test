@@ -3,7 +3,8 @@ import fetchUserLevel from './fetchUserLevel';
 
 export default function(){
   return Promise.all([
-    fetchUserInfo({ uid:123 }),
+    //fetchUserInfo.aa({ uid:123 }),
+    fetchUserInfo.({ uid:123 }),
     fetchUserLevel({ uid:123 })
   ])
   .then(([user, level]) => {

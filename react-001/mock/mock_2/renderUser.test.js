@@ -6,6 +6,15 @@ import fetchUserInfo from "./fetchUserInfo";
 import fetchUserLevel from "./fetchUserLevel";
 import renderUser from "./renderUser";
 
+//二级方法
+// fetchUserInfo.aa = () => {
+//   const data = {
+//     nick:"Bob"
+//   };
+//   return Promise.resolve(data);
+// };
+
+//一级方法
 fetchUserInfo.mockImplementation(params => {
   const data = {
     nick:"Bob"
