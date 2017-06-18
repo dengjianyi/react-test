@@ -51,7 +51,7 @@
       }
     },
     "testPathDirs": [
-    "<rootDir>/jest/mock5"
+    "<rootDir>/mock/mock_1"
     ]
   }
 }

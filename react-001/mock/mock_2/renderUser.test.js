@@ -1,6 +1,7 @@
 jest.mock("./fetchUserInfo");
 jest.mock("./fetchUserLevel");
 import fetchUserInfo from "./fetchUserInfo";
+import fetchUserLevel from "./fetchUserLevel";
 import renderUser from "./renderUser";
 import $ from "jquery";
 
