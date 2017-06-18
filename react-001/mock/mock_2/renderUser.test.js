@@ -1,9 +1,10 @@
+import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 jest.mock("./fetchUserInfo");
 jest.mock("./fetchUserLevel");
 import fetchUserInfo from "./fetchUserInfo";
 import fetchUserLevel from "./fetchUserLevel";
 import renderUser from "./renderUser";
-import $ from "jquery";
 
 fetchUserInfo.mockImplementation(params => {
   const data = {
@@ -17,9 +18,15 @@ fetchUserLevel.mockImplementation(params => {
   return Promise.resolve(level);
 });
 
-it("render", () => {
-  document.body.innerHTML = '<div id="container"></div>';
-  return renderUser().then(() => {
-    expect($("#container").text()).toBe("昵称:Bob等级:12");
+
+describe('test...', () => {
+  it("render", () => {
+      ReactDOM.render(
+        <p id='container'></p>,
+        document.body
+      );
+      return renderUser().then(() => {
+        expect(document.getElementById('container').innerHTML).toBe("昵称:Bob等级:12");
+      });
   });
 });

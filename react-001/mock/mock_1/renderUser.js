@@ -1,5 +1,5 @@
 import fetch from './fetch';
-import $ from "jquery";
+
 export default function(){
   return Promise.all([
     fetch("http://example.com/getUserInfo?uid=123")
@@ -23,7 +23,7 @@ export default function(){
   ])
   .then(([userInfo, level]) => {
     const text = "昵称:" + userInfo.nick + "等级:" + level;
-    $("#container").text(text);
+    document.getElementById('container').innerHTML = text;
   }).catch(err => {
     alert(err)
   });

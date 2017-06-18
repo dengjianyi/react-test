@@ -1,9 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 jest.mock("./fetch");
-import $ from "jquery";
 import fetch from "./fetch";
 import renderUser from "./renderUser";
-import { render } from 'enzyme';
 
 fetch.mockImplementation((url, params) => {
   let data;
@@ -31,11 +30,14 @@ fetch.mockImplementation((url, params) => {
   });
 });
 
-it("render", () => {
-  document.body.innerHTML = '<div id="container"></div>';
-  //let listWraper = render(<p id='container'></p>);
-  return renderUser().then(() => {
-    expect($("#container").text()).toBe("昵称:Bob等级:12");
-    //expect(listWraper.find('p').text()).toBe("昵称:Bob等级:12");
+describe('Listitem...', () => {
+  it("render", () => {
+      ReactDOM.render(
+        <p id='container'></p>,
+        document.body
+      );
+      return renderUser().then(() => {
+        expect(document.getElementById('container').innerHTML).toBe("昵称:Bob等级:12");
+      });
   });
 });
